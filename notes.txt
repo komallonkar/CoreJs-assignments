@@ -1,0 +1,27 @@
+JS - client-side(on browser) scripting language(interpreting language) 
+Ecmascript - standard ES 
+Old JS Vanilla JS (ES5)
+New (ES 6|7|8)
+
+How JS is executed
+    - the source code is passed through a program called JavaScript Engine.
+        - chrome - V8, Mozilla - Spider Monkey, IE - chakra
+
+Assignment 08-feb 
+array string math date 
+all predefined methods 
+
+09-feb
+github repo
+ create image slider and imgs change in every 3 seconds(5 images)
+ create a registration form with five fields and perform validation with regular expressions 
+
+
+program -1 : 
+                          
+
+11 feb assignment
+create todo list in JavaScript-
+    enter task in text field
+    button- add -> all task are rendered in:
+        srno task actions(edit/delete)

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var today = Date();
+    console.log(today+ " "+ typeof today);
+    var today2 =new Date();
+    console.log(today2+ " "+ typeof today2);
+    var today3= Date.now();
+    console.log("number of milliseconds elapsed since January 1, 1970:"+today3+"ms"+ " "+ typeof today3);
+    
+    var datetoday = new Date(today);
+    console.log(datetoday);
+    var date = datetoday.getDate(); // returns day of month
+    var day = datetoday.getDay(); // returns day of week
+    var year = datetoday.getFullYear(); // returns 4 digits of year
+    console.log("Date:"+ date+","+"Day:"+day+"year:"+year);
+
+    </script>
+</body>
+</html>

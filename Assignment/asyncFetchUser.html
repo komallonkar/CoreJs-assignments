@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: monospace;
+            font-size: 24px;
+        }
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+        th,td{
+            padding: 10px;
+        }
+    </style>
+    <title>async fetch user using api</title>
+</head>
+<body id="table-location">
+    <button id="fetch-users">Fetch users</button>
+    <script>
+        const URL_USER = "https://jsonplaceholder.typicode.com/users";
+        let fetchUser = document.getElementById("fetch-users");
+        fetchUser.addEventListener("click",showUsers);
+
+async function showUsers() {
+    try {
+        let user= await fetch(URL_USER);
+        let userJSON = await user.json();
+         
+        var body = document.getElementById("table-location");
+        var table = document.createElement("table");
+        table.setAttribute("border", 1);
+        var tableHeading = document.createElement("thead");
+        var tableHeadingRow = document.createElement("tr");
+       
+        var srHeading = document.createElement("th");
+        srHeading.innerHTML = "Sr No.";
+        var nameHeading = document.createElement("th");
+        nameHeading.innerHTML = "Name";
+        var emailHeading = document.createElement("th");
+        emailHeading.innerHTML = "Email";
+        var phoneHeading = document.createElement("th");
+        phoneHeading.innerHTML = "Phone";
+        var siteHeading = document.createElement("th");
+        siteHeading.innerHTML = "website";
+        tableHeadingRow.appendChild(srHeading);
+        tableHeadingRow.appendChild(nameHeading);
+        tableHeadingRow.appendChild(emailHeading);
+        tableHeadingRow.appendChild(phoneHeading);
+        tableHeadingRow.appendChild(siteHeading);
+        tableHeading.appendChild(tableHeadingRow);
+        table.appendChild(tableHeading);
+        body.appendChild(table);
+        var tableBody = document.createElement("tbody");
+        table.appendChild(tableBody);
+        userJSON.map(function (usersData) {
+            var tableDataRow = document.createElement("tr");
+            var srData = document.createElement("td");
+            srData.innerHTML = usersData.id;
+            var nameData = document.createElement("td");
+            nameData.innerHTML = usersData.name;
+            var emailData = document.createElement("td");
+            emailData.innerHTML = usersData.email;
+            var phoneData = document.createElement("td");
+            phoneData.innerHTML = usersData.phone;
+            var siteData = document.createElement("td");
+            siteData.innerHTML = usersData.website;
+            tableDataRow.appendChild(srData);
+            tableDataRow.appendChild(nameData);
+            tableDataRow.appendChild(emailData);
+            tableDataRow.appendChild(phoneData);
+            tableDataRow.appendChild(siteData);
+            tableBody.appendChild(tableDataRow);
+
+           
+        })
+    }catch(err){
+        console.log(err);
+
+    }
+
+
+   
+}
+    </script>
+</body>
+</html>
